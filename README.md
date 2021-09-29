@@ -12,8 +12,7 @@ Familiarizing with the GSAP animation library
         └── index.svelte     
 ```
 
-## Prerequisites<img width="1552" alt="image" src="https://user-images.githubusercontent.com/53351370/135220266-ae639f64-719c-4343-a024-047d5d3bddff.png">
-
+## Prerequisites
 
 [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)
 
