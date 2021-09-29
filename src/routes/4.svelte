@@ -21,6 +21,10 @@
 
 
 <style>
+  :global(body) {
+    overflow: hidden;
+  }
+  
   #element {
     display: block;
     height: 150px;
