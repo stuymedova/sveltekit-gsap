@@ -1,31 +1,33 @@
 <script>
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
+
+  let container, element
   
   onMount(() => {
     const animation = () => {
       gsap.fromTo(
-        '#element', 
+        element, 
         { scale: 0, rotate: 0 },
-        { scale: 1, rotate: 180, ease: 'back(1.5)', duration: 1, onComplete: () => {
-          gsap.set(document.querySelector('#element'), {
-            clearProps: 'transform'
-        })}
+        { scale: 1, rotate: 180, ease: 'back(1.5)', duration: 1, 
+          onComplete: () => { gsap.set(element, { clearProps: 'transform' })}
     })}
 
     animation()
-    document.querySelector('#wrapper').onclick = () => {
+    container.onclick = () => {
       animation()
     }
   })
 </script>
 
-<div id='wrapper'>
-  <div id='element'></div>
+
+<div bind:this={container} id='container'>
+  <div bind:this={element} id='element'></div>
 </div>
 
+
 <style>
-  #wrapper {
+  #container {
     width: 100%;
     height: 100%;
     position: absolute;

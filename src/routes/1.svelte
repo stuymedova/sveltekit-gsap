@@ -1,15 +1,22 @@
 <script>
+  // Using GSAP with Svelte:
+  // https://stackoverflow.com/questions/62780343/
+
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
   
+  let element
+
   onMount(() => {
     gsap.to(
-      '#element', 
+      element, 
       { x: 400 })
   })
 </script>
 
-<div id='element'></div>
+
+<div bind:this={element} id='element'></div>
+
 
 <style>
   #element {

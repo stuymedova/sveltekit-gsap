@@ -1,24 +1,28 @@
 <script>
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
+
+  let container
   
   onMount(() => {
     gsap.fromTo(
-      '.element', 
+      container.children, 
       { opacity: 0 },
       { opacity: 1, stagger: 0.1, ease: 'expo' })
   })
 </script>
 
-<div id='wrapper'>
+
+<div bind:this={container} id='container'>
   <div class='element'></div>
   <div class='element'></div>
   <div class='element'></div>
   <div class='element'></div>
 </div>
 
+
 <style>
-  :global(#wrapper) {
+  #container {
     display: flex;
   }
 

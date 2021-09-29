@@ -1,20 +1,24 @@
 <script>
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
+
+  let element
   
   onMount(() => {
     gsap.fromTo(
-      '#element', 
+      element, 
       { left: gsap.utils.random(window.innerWidth / 10, window.innerWidth / 10 * 9), rotate: gsap.utils.random(-20, 20), force3D: true },
       { top: '25%', rotate: gsap.utils.random(-20, 20), ease: 'expo', force3D: true, duration: 2, onComplete: () => { 
           gsap.to(
-            '#element', 
+            element, 
             { top: "120vh", rotate: gsap.utils.random(-20, 20), ease: 'expo.in', duration: 2 })}
       })
   })
 </script>
 
-<div id='element'></div>
+
+<div bind:this={element} id='element'></div>
+
 
 <style>
   #element {

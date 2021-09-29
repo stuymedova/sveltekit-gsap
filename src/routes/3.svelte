@@ -3,16 +3,20 @@
   import { gsap } from 'gsap'
   import { SlowMo } from 'gsap/dist/EasePack.js'
   gsap.registerPlugin(SlowMo)
+
+  let element
   
   onMount(() => {
     gsap.fromTo(
-      '#element', 
+      element, 
       { x: '-20vw', rotate: gsap.utils.random(-50, -25), force3D: true },
       { x: '120vw', rotate: gsap.utils.random(25, 50), ease: 'slow(0.95, 0.5, false)', force3D: true, duration: 5 })
   })
 </script>
 
-<div id='element'></div>
+
+<div bind:this={element} id='element'></div>
+
 
 <style>
   #element {

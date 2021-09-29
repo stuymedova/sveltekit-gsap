@@ -1,15 +1,19 @@
 <script>
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
+
+  let element
   
   onMount(() => {
     gsap.to(
-      '#element', 
+      element, 
       { rotate: gsap.utils.random(-360, 360) })
   })
 </script>
 
-<div id='element'></div>
+
+<div bind:this={element} id='element'></div>
+
 
 <style>
   #element {

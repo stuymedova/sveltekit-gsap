@@ -3,9 +3,11 @@
   import { gsap } from 'gsap'
   import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
   gsap.registerPlugin(ScrollToPlugin);
+
+  let anchor
   
   onMount(() => {
-    document.querySelector('[event-target="anchor"]').onclick = (event) => {
+    anchor.onclick = (event) => {
       event.preventDefault()
       gsap.to(
         window, 
@@ -15,7 +17,8 @@
   })
 </script>
 
-<p><a href='#index' event-target='anchor'>Scroll to Index</a></p>
+
+<p><a href='#index' bind:this={anchor}>Scroll to Index</a></p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam. Ipsum suspendisse ultrices gravida dictum. Id volutpat lacus laoreet non curabitur gravida. Pellentesque adipiscing commodo elit at imperdiet dui accumsan. Urna molestie at elementum eu facilisis sed odio morbi quis. Hendrerit dolor magna eget est lorem ipsum. Nunc sed id semper risus in hendrerit gravida rutrum. Consectetur a erat nam at lectus urna. Massa vitae tortor condimentum lacinia quis vel eros donec ac. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus. Leo urna molestie at elementum eu facilisis sed odio morbi. Condimentum lacinia quis vel eros donec.</p>
 
@@ -39,6 +42,7 @@
 
 <p>Nisl tincidunt eget nullam non nisi est. Dui ut ornare lectus sit amet est placerat in egestas. Vitae congue mauris rhoncus aenean vel elit scelerisque. Ultricies integer quis auctor elit sed vulputate mi sit amet. Lacus sed viverra tellus in hac habitasse. Id faucibus nisl tincidunt eget. Sem viverra aliquet eget sit amet tellus cras adipiscing. Lobortis feugiat vivamus at augue eget arcu dictum. Velit aliquet sagittis id consectetur purus. Tristique risus nec feugiat in. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Odio pellentesque diam volutpat commodo sed. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique. Viverra ipsum nunc aliquet bibendum. Lectus nulla at volutpat diam ut venenatis tellus in.</p>
 
+
 <style>
   p {
     width: 700px;
@@ -49,13 +53,14 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.25rem;
   }
-  #index {
-    font-size: 2rem;
-  }
 
   a {
     text-decoration: none;
     color: inherit;
+    font-size: 2rem;
+  }
+
+  #index {
     font-size: 2rem;
   }
 </style>

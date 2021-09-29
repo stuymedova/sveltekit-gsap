@@ -1,20 +1,26 @@
 <script>
+  // todo: clean up the animation
+
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-  
+  import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
+
+  let element
+
   onMount(() => {
     gsap.to(
-      '#element',
+      element,
       { rotate: 360, ease: 'none',
-        scrollTrigger: { trigger: '#wrapper', pin: true, scrub: true, markers: true }})
+        scrollTrigger: { trigger: '#wrapper', pin: true, scrub: true }})
   })
 </script>
 
+
 <div id='wrapper'>
-  <div id='element'></div>
+  <div bind:this={element} id='element'></div>
 </div>
+
 
 <style>
   :global(body) {
