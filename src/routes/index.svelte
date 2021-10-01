@@ -8,3 +8,4 @@
 <div>6. <a href='/6'>Stagger</a></div>
 <div>7. <a href='/7'>Scroll to Top</a></div>
 <div>8. <a href='/8'>Scroll to Anchor</a></div>
+<div>9. <a href='/9'>ScrollTrigger</a></div>
