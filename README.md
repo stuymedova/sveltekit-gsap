@@ -1,6 +1,7 @@
 # SvelteKit + GSAP
 
-Familiarizing with the GSAP animation library
+Familiarizing with the GSAP animation library.  
+GSAP docs: https://greensock.com/cheatsheet
 
 ## Overview
 
